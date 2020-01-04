@@ -5,3 +5,5 @@ aldl-ftdi
 aldl-tty
 aldl-dummy
 eeflash-ftdi
+aldl-wsl
+*.bin

@@ -93,6 +93,10 @@ void parse_cmdline(int argc, char **argv, aldl_conf_t *aldl) {
       aldl->datalogger_enable = 1;
     } else if(rf_strcmp(argv[n_arg],"datastreamer") == 1) {
       aldl->datastreamer_enable = 1;
+    } else if(rf_strcmp(argv[n_arg],"-d") == 1) {
+      aldl->datastreamer_definitions = 1;
+    } else if(rf_strcmp(argv[n_arg],"-m") == 1) {
+      aldl->datastreamer_messages = 1;
     } else if(rf_strcmp(argv[n_arg],"remote") == 1) {
       aldl->remote_enable = 1;
     } else {

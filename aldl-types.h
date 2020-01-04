@@ -55,6 +55,7 @@ typedef union aldl_data {
 typedef struct aldl_define {
   char *name;         /* unique name and identifier */
   char *description;  /* description of each definition */
+  char *uom;            /* unit of measure string */
   /* ----- stuff for modules ----------------------------*/
   int log;            /* log data from this definition */
   int display;        /* display data from this definition */
@@ -62,13 +63,13 @@ typedef struct aldl_define {
   aldl_data_t alarm_low, alarm_high; /* value for alarms */
   /* ----- output definition -------------------------- */
   aldl_datatype_t type; /* the OUTPUT type */
-  char *uom;            /* unit of measure string */
-  byte precision;       /* floating point display precision.  not used in
-                           conversion; only for display plugins. */
   aldl_data_t min, max;  /* the low and high range of OUTPUT value */
   /* ----- conversion ----------------------------------*/
   aldl_data_t adder;         /* forms a linear equation, such as */ 
   aldl_data_t multiplier;    /* MULTIPLIER(n)+ADDER */ 
+
+  byte precision;       /* floating point display precision.  not used in
+                           conversion; only for display plugins. */
   /* ----- input definition --------------------------- */
   byte packet; /* selects which packet unique id the data comes from */
   byte offset; /* offset within packet in bytes */
@@ -149,6 +150,8 @@ typedef struct aldl_conf {
   int consoleif_enable;
   int datalogger_enable;
   int datastreamer_enable;
+  int datastreamer_definitions;
+  int datastreamer_messages;
   int dataserver_enable;
   int remote_enable;
   /* config files -------- */

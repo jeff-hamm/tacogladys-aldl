@@ -38,7 +38,7 @@ void serial_close() {
 void gen_pkt() {
   int x;
   databuff[0]=0xF4;
-  databuff[1]=0x92;
+  databuff[1]=0x95;
   databuff[2]=0x01;
   for(x=3;x<63;x++) databuff[x] = ( (byte)rand() % 256 ) - 1;
   databuff[63] = checksum_generate(databuff,63);
