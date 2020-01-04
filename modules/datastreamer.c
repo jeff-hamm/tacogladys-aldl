@@ -35,7 +35,7 @@ long current_timestamp() {
 }
 
 
-int write_def(aldl_conf_t *aldl,datastreamer_conf_t *conf) {
+void write_def(aldl_conf_t *aldl,datastreamer_conf_t *conf) {
     int zero = 0;
     int size = sizeof(aldl_define_t);
     int len;
@@ -77,7 +77,7 @@ void *datastreamer_init(void *aldl_in) {
   unsigned int n_records = 0; /* number of record counter */
   unsigned long last_timestamp = 0;
 //  int x = 0; /* tmp */
-  float pps; /* packet per second rate */
+//  float pps; /* packet per second rate */
   aldl_conf_t *aldl = (aldl_conf_t *)aldl_in;
 
   /* grab config data */
@@ -129,7 +129,7 @@ void *datastreamer_init(void *aldl_in) {
 		  n_records++;
 		  if(n_records % 300 == 0) {
 			lock_stats();
-			pps = aldl->stats->packetspersecond;
+//			pps = aldl->stats->packetspersecond;
 			unlock_stats();
 	//        fprintf(stderr,"datastreamer: Logged %u pkts @ %.2f/sec\n",n_records,pps);
 		  }

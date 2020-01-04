@@ -193,7 +193,7 @@ char *dfile_shrink(dfile_t *d) {
 }
 
 
-inline int is_whitespace(char ch) {
+int is_whitespace(char ch) {
   if(ch == 0 || ch == ' ' || ch == '\n') return 1;
   return 0;
 }
